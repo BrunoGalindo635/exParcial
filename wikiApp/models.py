@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 # Create your models here.
 
@@ -16,3 +17,13 @@ class ArticuloWiki(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+class TemaForm(forms.ModelForm):
+    class Meta:
+        model = TemaWiki
+        fields = ['nombre', 'descripcion']
+
+class ArticuloForm(forms.ModelForm):
+    class Meta:
+        model = ArticuloWiki
+        fields = ['titulo', 'contenido', 'temaRelacionado']

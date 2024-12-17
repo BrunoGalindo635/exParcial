@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Resultados de búsqueda</h2>
+    {% if resultados %}
+        <ul class="search-results">
+            {% for articulo in resultados %}
+                <li>
+                    <a href="{% url 'wikiApp:ver_articulo' articulo.id %}">{{ articulo.titulo }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron artículos.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>{{ articulo.titulo }}</h2>
+    <p><strong>Tema:</strong> {{ articulo.temaRelacionado.nombre }}</p>
+    <p>{{ articulo.contenido }}</p>
+{% endblock %}
